@@ -1,4 +1,6 @@
+import styles from "./Profile.module.css";
 import PropTypes from "prop-types";
+
 
 const Profile = ({
     username,
@@ -9,28 +11,29 @@ const Profile = ({
 }) => {
     
     return (
-      <div>
-  <div>
+      <div className={styles.card}>
+  <div className={styles.description}>
     <img src={avatar} 
-      alt="User avatar"
+            alt="User avatar"
+            className={styles.avatar}
     />
-    <p>{username}</p>
-    <p>{tag}</p>
-    <p>{location}</p>
+    <p className={styles.userName}>{username}</p>
+    <p className={styles.userInfo}>{tag}</p>
+    <p className={styles.userInfo}>{location}</p>
   </div>
 
-  <ul>
-    <li>
-      <span>Followers</span>
-      <span>{followers}</span>
+  <ul className={styles.statsList}>
+    <li className={styles.statsItem}>
+      <span className={styles.label}>Followers</span>
+      <span className={styles.quantity}>{followers}</span>
     </li>
-    <li>
-      <span>Views</span>
-      <span>{views}</span>
+    <li className={styles.statsItem}>
+      <span className={styles.label}>Views</span>
+      <span className={styles.quantity}>{views}</span>
     </li>
-    <li>
-      <span>Likes</span>
-      <span>{likes}</span>
+    <li className={styles.statsItem}>
+      <span className={styles.label}>Likes</span>
+      <span className={styles.quantity}>{likes}</span>
     </li>
   </ul>
 </div>

@@ -1,3 +1,4 @@
+import style from "./App.module.css";
 import Profile from "../Profile/Profile";
 import userData from "../../userData.json";
 import FriendList from "../FriendList/FriendList";
@@ -7,7 +8,7 @@ import transactions from "../../transactions.json";
 
 const App = () => {
     return (
-        <>
+        <div className = {style.container}>
             <Profile
              username={userData.username}
              tag={userData.tag}
@@ -17,7 +18,7 @@ const App = () => {
         
             <FriendList friends={friends} />
             <TransactionHistory items={transactions} />
-        </>
+        </div>
     );
 };
 
